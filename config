@@ -29,6 +29,7 @@ bar {
 #Rofi#
 
 bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 
 #Startup#
 
@@ -57,7 +58,6 @@ bindsym $mod+p exec --no-startup-id messengerfordesktop
 bindsym $mod+o exec --no-startup-id steam
 bindsym $mod+i exec --no-startup-id spotify
 bindsym $mod+a exec --no-startup-id atom
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 bindsym $mod+g exec --no-startup-id gimp
 
 #Kill#
