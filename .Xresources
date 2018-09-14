@@ -1,0 +1,63 @@
+! special
+*.foreground:   #b6d9cd
+*.background:   #080c0a
+*.cursorColor:  #b6d9cd
+
+! black
+*.color0:       #0f1413
+*.color8:       #65c4a8
+
+! red
+*.color1:       #14a9f6
+*.color9:       #50c1e3
+
+! green
+*.color2:       #0daa64
+*.color10:      #70c3a9
+
+! yellow
+*.color3:       #4edcb0
+*.color11:      #b8d864
+
+! blue
+*.color4:       #566861
+*.color12:      #baa0dd
+
+! magenta
+*.color5:       #768d85
+*.color13:      #8fd9f6
+
+! cyan
+*.color6:       #9bb9ae
+*.color14:      #f2d2df
+
+! white
+*.color7:       #c6ebdd
+*.color15:      #96d5ee
+
+URxvt.depth: 32
+URxvt.background: [95]#000000
+
+URxvt.font: xft:ohsnap:size=8
+
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 50
+URxvt*urlLauncher: firefox-nightly  
+URxvt*scrollBar: false
+
+!Rofi
+
+rofi.color-window: argb:7f2d303b, #7c8389, #1d1f21
+rofi.color-normal: argb:31d1f21b, #c4cbd4, argb:96404552, #4084d6, #f9f9f9
+rofi.color-urgent: argb:2c1d1f21, #cc6666, argb:e54b5160, #a54242, #f9f9f9
+rofi.color-active: argb:2c1d1f21, #65acff, argb:e44b5160, #4491ed, #f9f9f9
+rofi.width: 20
+rofi.lines: 5
+rofi.columns: 2
+rofi.font: ohsnap 8
+rofi.bw: 0
+rofi.padding: 40
+rofi.eh: 1
+!rofi.separator-style: solid
+rofi.hide-scrollbar: true

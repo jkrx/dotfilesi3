@@ -1,0 +1,211 @@
+#Hobs Config#
+
+font pango:ohsnap sans 8
+
+#Colours#
+
+client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
+client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
+client.unfocused #073642 #073642 #93a1a1 #586e75
+client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+
+#i3bar#
+
+bar {
+  font pango:ohsnap 8
+  status_command i3blocks
+  position top
+  colors {
+    separator #268bd2
+    background #002b36
+    statusline #839496
+    focused_workspace #fdf6e3 #6c71c4 #fdf6e3
+    active_workspace #fdf6e3 #6c71c4 #fdf6e3
+    inactive_workspace #002b36 #586e75 #002b36
+    urgent_workspace #d33682 #d33682 #fdf6e3
+  }
+}
+
+#Rofi#
+
+bindsym $mod+Tab exec rofi -show window
+
+#Startup#
+
+exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id urxvtd -q -f -o
+exec --no-startup-id qbittorrent
+exec --no-startup-id tc-twitch
+
+#Mod keys#
+
+set $mod Mod4
+floating_modifier $mod
+
+#Keybindings apps#
+
+bindsym $mod+Return exec urxvtc
+bindsym $mod+F1 exec --no-startup-id 9menu -popup -bg "#2d2d2d" -fg "#f7f7f7" -font "-*-fixed-bold-r-normal-*-14-*-*-*-*-*-*-*" -teleport -file ./.9menurc
+bindsym $mod+b exec --no-startup-id lmms
+bindsym $mod+m exec --no-startup-id atom
+bindsym $mod+f exec --no-startup-id firefox-nightly
+bindsym $mod+shift+v  exec --no-startup-id virtualbox
+bindsym $mod+shift+F1 exec --no-startup-id scrot -q 100 -c -d 2 "/mnt/data/firefox/Scrot_%Y-%m-%d_%H:%M:%S.png"
+bindsym $mod+F12 exec --no-startup-id feh --hide-pointer -x -q -D 10 -B black -F -z /mnt/data/images
+bindsym $mod+d exec --no-startup-id discord
+bindsym $mod+p exec --no-startup-id messengerfordesktop
+bindsym $mod+o exec --no-startup-id steam
+bindsym $mod+i exec --no-startup-id spotify
+bindsym $mod+a exec --no-startup-id atom
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+g exec --no-startup-id gimp
+
+#Kill#
+bindsym $mod+q kill
+
+
+#Window tabbing#
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+#Move windows#
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+#Window split#
+
+bindsym $mod+c split h
+bindsym $mod+v split v
+
+
+#Fullscreen#
+
+bindsym $mod+x fullscreen
+
+#Window layout#
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+#Toogle floating#
+
+bindsym $mod+Shift+space floating toggle
+
+#Focus mode toggle#
+
+bindsym $mod+space focus mode_toggle
+
+#WS names#
+
+set $WS1 :
+set $WS2 :
+set $WS3 :
+set $WS4 :
+set $WS5 :
+set $WS6 :
+set $WS7 :
+set $WS8 :
+set $WS9 :
+
+#Switch WS#
+
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+
+#Move window to WS#
+
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+
+#Apps assigned WS#
+
+assign [class="firefox-nightly"] $WS2
+assign [class="google-chrome-stable"] $WS3
+assign [class="Audacity"] $WS5
+assign [class="Audacious"] $WS5
+assign [class="Nitrogen"] $WS5
+assign [class="Lmms"] $WS5
+assign [class="steam"] $WS4
+assign [class="gimp"] $WS6
+assign [class="VirtualBox"] $WS6
+assign [class="GParted"] $WS6
+assign [class="discord"] $WS7
+assign [class="messengerfordesktop"] $WS7
+assign [class="thunderbird"] $WS7
+assign [class="qbittorrent"] $WS8
+assign [class="gwenview"] $WS9
+assign [class="mpv"] $WS9
+assign [class="spotify"] $WS9
+assign [class="atom"] $WS6
+assign [class="tc-twitch"] $WS9
+
+#WS assigned monitor#
+
+workspace 1:term output DVI-1-1
+workspace 2:web  output HDMI-0
+workspace 3:chrome output HDMI-0
+workspace 4:steam output HDMI-0
+workspace 5:prod output DVI-1-1
+workspace 6:vms output HDMI-0
+workspace 7:chat output DVI-1-1
+workspace 8:dl output DVI-1-1
+workspace 9:media output HDMI-0
+workspace 0:code output HDMI-0
+
+#Borders and shit#
+
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+
+#Reload/Restart/Exit#
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-msg exit
+
+#Resize Window#
+
+mode "resize" {
+
+        bindsym Right resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Left resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+#Switch WS#
+
+bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev
+
+#i3lock#
+
+bindsym $MOD+SHIFT+x exec i3lock -c 383C45
