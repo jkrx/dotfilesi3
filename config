@@ -47,15 +47,14 @@ floating_modifier $mod
 
 bindsym $mod+Return exec urxvtc
 bindsym $mod+F1 exec --no-startup-id 9menu -popup -bg "#2d2d2d" -fg "#f7f7f7" -font "-*-fixed-bold-r-normal-*-14-*-*-*-*-*-*-*" -teleport -file ./.9menurc
-bindsym $mod+b exec --no-startup-id lmms
-bindsym $mod+m exec --no-startup-id atom
+bindsym $mod+l exec --no-startup-id lmms
 bindsym $mod+f exec --no-startup-id firefox-nightly
 bindsym $mod+shift+v  exec --no-startup-id virtualbox
 bindsym $mod+shift+F1 exec --no-startup-id scrot -q 100 -c -d 2 "/mnt/data/firefox/Scrot_%Y-%m-%d_%H:%M:%S.png"
 bindsym $mod+F12 exec --no-startup-id feh --hide-pointer -x -q -D 10 -B black -F -z /mnt/data/images
 bindsym $mod+d exec --no-startup-id discord
-bindsym $mod+p exec --no-startup-id messengerfordesktop
-bindsym $mod+o exec --no-startup-id steam
+bindsym $mod+m exec --no-startup-id messengerfordesktop
+bindsym $mod+s exec --no-startup-id steam
 bindsym $mod+i exec --no-startup-id spotify
 bindsym $mod+a exec --no-startup-id atom
 bindsym $mod+g exec --no-startup-id gimp
@@ -91,7 +90,7 @@ bindsym $mod+x fullscreen
 
 #Window layout#
 
-bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
