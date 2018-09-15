@@ -90,7 +90,7 @@ bindsym $mod+x fullscreen
 
 #Window layout#
 
-bindsym $mod+q layout stacking
+bindsym $mod+t layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
