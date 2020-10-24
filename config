@@ -1,6 +1,6 @@
 #Hobs Config#
 
-font pango:ohsnap 8
+font pango:terminus 8
 
 #Colours#
 
@@ -12,8 +12,8 @@ client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 #i3bar#
 
 bar {
-  font pango:ohsnap 8
-  status_command i3blocks
+  font pango:terminus 8
+  status_command i3status
   position top
   colors {
     separator #268bd2
@@ -37,7 +37,6 @@ exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id qbittorrent
 exec --no-startup-id tc-twitch
-exec --no-startup-id pcloud-drive
 
 #Mod keys#
 
@@ -49,16 +48,18 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvtc
 bindsym $mod+F1 exec --no-startup-id 9menu -popup -bg "#2d2d2d" -fg "#f7f7f7" -font "-*-fixed-bold-r-normal-*-14-*-*-*-*-*-*-*" -teleport -file ./.9menurc
 bindsym $mod+l exec --no-startup-id lmms
-bindsym $mod+f exec --no-startup-id firefox-nightly
+bindsym $mod+f exec --no-startup-id firefox
 bindsym $mod+shift+v  exec --no-startup-id virtualbox
 bindsym $mod+shift+F1 exec --no-startup-id scrot -q 100 -c -d 2 "/mnt/data/firefox/Scrot_%Y-%m-%d_%H:%M:%S.png"
 bindsym $mod+F12 exec --no-startup-id feh --hide-pointer -x -q -D 10 -B black -F -z /mnt/data/images
-bindsym $mod+d exec --no-startup-id discord
+bindsym $mod+d exec --no-startup-id discord-canary
 bindsym $mod+m exec --no-startup-id messengerfordesktop
 bindsym $mod+s exec --no-startup-id steam
 bindsym $mod+i exec --no-startup-id spotify
 bindsym $mod+a exec --no-startup-id atom
 bindsym $mod+g exec --no-startup-id gimp
+bindsym $mod+o exec --no-startup-id obs
+bindsym $mod+t exec --no-startup-id chatterino
 
 #Kill#
 bindsym $mod+q kill
@@ -91,7 +92,7 @@ bindsym $mod+x fullscreen
 
 #Window layout#
 
-bindsym $mod+t layout stacking
+#bindsym $mod+t layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -103,17 +104,24 @@ bindsym $mod+Shift+space floating toggle
 
 bindsym $mod+space focus mode_toggle
 
+#Amixer
+
+bindsym XF86AudioRaiseVolume exec "alsamixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "alsamixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "alsamixer -q sset Master,0 toggle"
+
 #WS names#
 
 set $WS1 :
 set $WS2 :
-set $WS3 :
+set $WS3 :
 set $WS4 :
 set $WS5 :
-set $WS6 :
+set $WS6 :
 set $WS7 :
 set $WS8 :
 set $WS9 :
+set $WS0 :vlc
 
 #Switch WS#
 
@@ -126,6 +134,7 @@ bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
 bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
 
 #Move window to WS#
 
@@ -138,10 +147,10 @@ bindsym $mod+Shift+6 move container to workspace $WS6
 bindsym $mod+Shift+7 move container to workspace $WS7
 bindsym $mod+Shift+8 move container to workspace $WS8
 bindsym $mod+Shift+9 move container to workspace $WS9
-
+bindsym $mod+shift+0 moce container to workspace $WS0
 #Apps assigned WS#
 
-assign [class="firefox-nightly"] $WS2
+assign [class="firefox"] $WS2
 assign [class="google-chrome-stable"] $WS3
 assign [class="Audacity"] $WS5
 assign [class="Audacious"] $WS5
@@ -151,28 +160,30 @@ assign [class="steam"] $WS4
 assign [class="gimp"] $WS6
 assign [class="VirtualBox"] $WS6
 assign [class="GParted"] $WS6
-assign [class="discord"] $WS7
+assign [class="discord-canary"] $WS7
 assign [class="messengerfordesktop"] $WS7
 assign [class="thunderbird"] $WS7
 assign [class="qbittorrent"] $WS8
-assign [class="gwenview"] $WS9
+assign [class="vlc"] $WS0
 assign [class="mpv"] $WS9
 assign [class="spotify"] $WS9
 assign [class="atom"] $WS6
 assign [class="tc-twitch"] $WS9
+assign [class="obs"] $WS9
+assign [class="chatterino"] $WS9
 
 #WS assigned monitor#
 
-workspace 1:term output DVI-1-1
-workspace 2:web  output HDMI-0
-workspace 3:chrome output HDMI-0
-workspace 4:steam output HDMI-0
-workspace 5:prod output DVI-1-1
-workspace 6:vms output HDMI-0
-workspace 7:chat output DVI-1-1
-workspace 8:dl output DVI-1-1
-workspace 9:media output HDMI-0
-workspace 0:code output HDMI-0
+workspace 1:term output DVI-D-0
+workspace 2:web  output HDMI-A-0
+workspace 3:chrome output HDMI-A-0
+workspace 4:steam output HDMI-A-0
+workspace 5:prod output DVI-D-0
+workspace 6:vms output HDMI-A-0
+workspace 7:chat output DVI-D-0
+workspace 8:dl output DVI-D-0
+workspace 9:media output HDMI-A-0
+workspace 0:vlc output HDMI-A-0
 
 #Borders and shit#
 
